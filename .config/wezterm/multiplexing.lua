@@ -3,7 +3,7 @@ local w = require("wezterm")
 local M = {}
 
 function M.setup(config)
-	config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
+	-- config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 	config.keys = {
 		{
 			key = "Enter",
@@ -70,6 +70,7 @@ function M.setup(config)
 			action = w.action.ActivateTabRelative(-1),
 		},
 	}
+	config.keys = {}
 end
 
 return M
