@@ -1,5 +1,5 @@
-add_newline = false
-format = """$directory$nix_shell$character"""
+add_newline = true
+format = """$directory$all$line_break$nix_shell$character"""
 # format="""
 # $python\
 # $directory\
@@ -7,7 +7,7 @@ format = """$directory$nix_shell$character"""
 # """
 # $git_branch\
 # $git_status\
-right_format = """$all"""
+# right_format = """$all"""
 
 palette = "everblush"
 
