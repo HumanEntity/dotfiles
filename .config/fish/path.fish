@@ -6,6 +6,8 @@ set PATH $PATH $HOME/.config/tmux/plugins/tmuxifier/bin/
 set PATH $PATH $HOME/.night.zig/nz/
 set PATH $PATH $HOME/.night.zig/latest/
 
+set PATH $PATH $HOME/scripts/
+
 set -x HELIX_RUNTIME ~/dev/tools/helix/runtime
 # set -x NIX_PATH "$HOME/.nix-defexpr/channels:nixpkgs=$HOME/.nix-defexpr/channels/unstable"
 # bash -c "export NIX_PATH ${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels"
@@ -35,6 +37,13 @@ set PATH $PATH $GOROOT/bin
 
 set -gx GOPATH ~/.golib
 set PATH $PATH $GOPATH/bin
+
+# Odin
+set PATH $PATH $HOME/code/tools/Odin/
+
+# Tmuxifier
+set PATH $PATH $HOME/code/tools/tmuxifier/bin/
+
 # set -p PATH $PATH /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 
 # PYENV Config
@@ -46,7 +55,7 @@ set PATH /usr/local/opt/tcl-tk/bin $PATH
 # set -gx LIBRARY_PATH $LIBRARY_PATH $( brew --prefix )/lib:$(brew --prefix)/opt/libiconv/lib
 # set -gx LIBRARY_PATH $LIBRARY_PATH /usr/lib/ /usr/local/lib/ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/ /opt/homebrew/lib/
 
-# /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/ 
+# /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/
 
 # set -gx LDFLAGS $LDFLAGS -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Security.framework/
 set -gx LDFLAGS $LDFLAGS "-L/usr/local/lib -lobjc -I/opt/homebrew/include"

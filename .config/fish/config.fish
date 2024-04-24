@@ -16,7 +16,7 @@ set FZF_DEFAULT_OPTS '
 # bash -c "export DOTFILES_PATH=~/dotfiles/"
 
 if type -q sccache
-	set -gx RUSTC_WRAPPER sccache
+    set -gx RUSTC_WRAPPER sccache
 end
 
 set -gx DOTFILES_PATH ~/dotfiles/
@@ -29,9 +29,9 @@ source $FISHPATH/funcs.fish
 set -x HISTORY_IGNORE "(ls|ll|lll|lg|pwd|exit|sudo reboot|history|cd -|cd ..)"
 set -x LS_COLORS "fi=1;33"
 # Set MANPAGER
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 # set MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -x EDITOR "hx"
+set -x EDITOR nvim
 # set -x VISUAL "neovide"
 
 set fish_greeting
@@ -51,7 +51,7 @@ set -x NNN_FCOLORS "$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SO
 
 set -x NNN_PLUG 'o:fzopen;n:nuke'
 
-set -x NNN_OPTS "cErx"
+set -x NNN_OPTS cErx
 
 # bash $HOME/.zsh/quitcd_nnn.zsh
 set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
@@ -70,30 +70,35 @@ bash "$HOME/.config/fish/nnn.sh"
 # 	colorscript random
 # end
 
-set -x USE_COLORSCRIPT "true"
+set -x USE_COLORSCRIPT true
 # if type -q pyenv
 # 	pyenv init - | source
 # end
 if type -q starship
-	starship init fish | source
+    starship init fish | source
 end
 fish_add_path /Users/tomek/.spicetify
 
 if type -q zoxide
-	zoxide init fish | source
+    zoxide init fish | source
 end
 
 if type -q luarocks
-	eval "$(luarocks completion fish)"
+    eval "$(luarocks completion fish)"
+end
+
+if type -q tmuxifier
+    eval (tmuxifier init - fish)
 end
 
 if type -q mise
-	mise activate fish | source
-	mise completion fish | source
-	fish_add_path ~/.local/share/mise/shims
+    mise activate fish | source
+    mise completion fish | source
+    set PATH ~/.local/share/mise/shims $PATH
 end
 
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /Users/tomek/.ghcup/bin $PATH # ghcup-env
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+set -gx PATH $HOME/.cabal/bin /Users/tomek/.ghcup/bin $PATH # ghcup-env
 function __fish_poetry_95045e6843d43f9f_complete_no_subcommand
     for i in (commandline -opc)
         if contains -- $i about add build 'cache clear' 'cache list' check config 'debug info' 'debug resolve' 'env info' 'env list' 'env remove' 'env use' export help init install list lock new publish remove run search 'self add' 'self install' 'self lock' 'self remove' 'self show' 'self show plugins' 'self update' shell show 'source add' 'source remove' 'source show' update version
@@ -102,4 +107,3 @@ function __fish_poetry_95045e6843d43f9f_complete_no_subcommand
     end
     return 0
 end
-

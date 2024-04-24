@@ -20,7 +20,7 @@ alias sed "gsed"
 if type -q vim
 	alias "vi" "vim --clean"
 end
-# alias "vim" "nvim"
+alias "vim" "nvim"
 # if type -q hx 
 # 	alias "nvim" "hx"
 # end
