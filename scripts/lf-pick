@@ -1,0 +1,10 @@
+#!/bin/bash
+
+lfp() {
+	local TEMP=$(mktemp)
+  lf -selection-path=$TEMP
+	# yazi --chooser-file $TEMP
+  cat $TEMP
+}
+
+lfp

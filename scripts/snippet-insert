@@ -1,0 +1,11 @@
+#!/bin/sh
+
+snippet_path=~/.snippets
+
+TEMP=$(mktemp)
+
+command="ls $snippet_path | fzf >> $TEMP"
+
+tmux popup -E "$command"
+
+cat $snippet_path/$(cat $TEMP)

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+command=""
+
+case $1 in
+  "rust")
+  command="cargo watch -q -c -r 'clippy'"
+  tmux split-window -v -l 30% $command
+  ;;
+esac
+
+tmux split-window -v -l 30% $command
