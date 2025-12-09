@@ -1,4 +1,4 @@
-set PATH $PATH $HOME/.local/share/bob/nightly/nvim-macos/bin/
+set PATH $PATH $HOME/.local/share/bob/nvim-bin
 set PATH $PATH $HOME/bin/
 set PATH $PATH /Applications/Docker.app/Contents/Resources/bin/
 set PATH $PATH $HOME/.config/tmux/plugins/tmuxifier/bin/
@@ -32,8 +32,8 @@ set PATH $PATH ~/.cargo/bin/
 set PATH $PATH /Applications/Firefox.app/Contents/MacOS
 
 # GO
-set -gx GOROOT /usr/local/go
-set PATH $PATH $GOROOT/bin
+# set -gx GOROOT /usr/local/go
+# set PATH $PATH $GOROOT/bin
 
 set -gx GOPATH ~/.golib
 set PATH $PATH $GOPATH/bin
@@ -58,7 +58,7 @@ set PATH /usr/local/opt/tcl-tk/bin $PATH
 # /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/
 
 # set -gx LDFLAGS $LDFLAGS -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Security.framework/
-set -gx LDFLAGS $LDFLAGS "-L/usr/local/lib -lobjc -I/opt/homebrew/include"
+set -gx LDFLAGS $LDFLAGS "-L/usr/local/lib -I/opt/homebrew/include"
 
 # set -x PATH $PATH /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/
 set -x PATH $PATH /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/
@@ -70,13 +70,16 @@ set -x CFLAGS $CFLAGS "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Sys
 # set -x CPATH $CPATH "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
 
 
-set -x LDFLAGS $LDFLAGS "-L/opt/homebrew/opt/libiconv/lib"
-set -x CFLAGS $CFLAGS "-I/opt/homebrew/opt/libiconv/include"
+set -x LDFLAGS $LDFLAGS -L/opt/homebrew/opt/libiconv/lib
+set -x CFLAGS $CFLAGS -I/opt/homebrew/opt/libiconv/include
 set -x CFLAGS $CFLAGS "-I/opt/homebrew/Cellar/libmagic/5.45/include/magic.h"
 
 set -x PATH $PATH ~/.local/bin
 set -x PATH $PATH ~/dev/v/v/
 
 set -x MANPATH $MANPATH /opt/homebrew/opt/gh/share/man/
+set -x MANPATH $MANPATH /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man/
 
 set -x PATH $PATH ~/.config/v-analyzer/bin/
+
+set -x PATH $PATH /run/current-system/sw/bin/
