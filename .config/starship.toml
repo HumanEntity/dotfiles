@@ -1,5 +1,8 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 add_newline = true
-format = """$directory$all$line_break$nix_shell$character"""
+# format = """$directory$all$line_break$character"""
+format = """$time$directory$all$line_break$character"""
 # format="""
 # $python\
 # $directory\
@@ -9,28 +12,36 @@ format = """$directory$all$line_break$nix_shell$character"""
 # $git_status\
 # right_format = """$all"""
 
-palette = "everblush"
+# palette = "everblush"
 
-[palettes.everblush]
-background = "#141b1e"
-lighter_background = "#232a2d"
-red = "#e57474"
-green = "#8ccf7e"
-yellow = "#e5c76b"
-blue = "#67b0e8"
-magenta = "#c47fd5"
-cyan = "#6cbfbf"
-light_gray = "#b3b9b8"
-foreground = "#dadada"
+# [palettes.everblush]
+# background = "#141b1e"
+# lighter_background = "#232a2d"
+# red = "#e57474"
+# green = "#8ccf7e"
+# yellow = "#e5c76b"
+# blue = "#67b0e8"
+# magenta = "#c47fd5"
+# cyan = "#6cbfbf"
+# light_gray = "#b3b9b8"
+# foreground = "#dadada"
 
 [directory]
 style = "blue"
 
+[time]
+format = '[$time]($style) '
+style = 'green'
+disabled = false
+
 [character]
 format = '$symbol '
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+# success_symbol = "[❯](purple)"
+# error_symbol = "[❯](red)"
+# vimcmd_symbol = "[❮](green)"
+success_symbol = "[;](purple)"
+error_symbol = "[;](red)"
+vimcmd_symbol = "[;::](green)"
 # vimcmd_symbol = '[❮](bold green)'
 vimcmd_replace_one_symbol = '[❮](bold purple)'
 vimcmd_replace_symbol = '[❮](bold purple)'
@@ -46,18 +57,22 @@ format = "[on]() [$symbol$branch]($style) "
 [git_status]
 format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](yellow)($ahead_behind$stashed)]($style) "
 style = "cyan"
-behind = "<"
-ahead = ">"
-diverged = "<>"
-conflicted = "x"
+behind = " "
+ahead = " "
+diverged = "󱡷 "
+conflicted = " "
 # conflicted = "​"
 untracked = "?"
 modified = "~"
 staged = "[++${count}](green)"
 renamed = "\""
 deleted = "-"
-stashed = "#"
+stashed = " "
 
 [python]
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-symbol = ""
+symbol = " "
+
+[zig]
+version_format = "v$major.$minor.$patch"
+symbol = " "
